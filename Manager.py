@@ -1,6 +1,4 @@
 import logging
-
-from flask import session
 from flask_migrate import Migrate,MigrateCommand
 from flask_script import Manager
 from info import db,create_app

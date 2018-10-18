@@ -26,6 +26,8 @@ def setup_log(config_name):
 
 
 def create_app(config_name):
+    # 传入日志的名字 以便于获取指定配置的日志等级
+    setup_log(config_name)
     app = Flask(__name__)
     # 导入配置
     app.config.from_object(config[config_name])
