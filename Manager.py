@@ -1,4 +1,6 @@
 import logging
+
+from flask import current_app
 from flask_migrate import Migrate,MigrateCommand
 from flask_script import Manager
 from info import db,create_app
@@ -21,6 +23,8 @@ def index():
     logging.warning("测试warning")
     logging.error("测试error")
     logging.fatal("测试fatal")
+
+    current_app.logger.error("测试error")
     return "helloworld"
 
 if __name__ == '__main__':
